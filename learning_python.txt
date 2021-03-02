@@ -1,0 +1,6 @@
+Em Python podemos declarar variaveis
+Em Python podemos criar funções, classes - orientação à objetos,
+Em Python podemos estrutrar um código, loops, as colections,
+lista[], tupla() e dicionários{}, aprendi sobre os tipos de 
+dados int, str, float, bool e complex e como utilizá-los,
+Em Python eu aprendi para que serve o Python, seus casos de sucesso e de uso etc.
