@@ -1,6 +1,5 @@
 
 # Desafio 85
-
 matriz = [[], [], []]
 for k, m in enumerate(matriz):
     for l in range(3):
