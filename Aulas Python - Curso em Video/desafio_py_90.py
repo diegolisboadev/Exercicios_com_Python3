@@ -11,7 +11,7 @@ print('\n')
 for key in range(1, 5):
     jogador = key
     jogo = randint(0,6)
-    print(f'O jogador{key} tirou {jogo}')
+    print(f'O jogador{key} tirou {jogo} no dado.')
     jogos[f'jogador{key}'] = jogo
     sleep(3)
 
