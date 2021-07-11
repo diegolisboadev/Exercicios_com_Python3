@@ -7,16 +7,30 @@ lista_pessoas = []
 pessoas = dict()
 
 while True:
-    pessoas['nome'] = input('Informe seu nome: ').capitalize()
-    pessoas['sexo'] = input('Informe seu sexo [M | F]: ').upper()
-    pessoas['idade'] = int(input('Informe sua idade: '))
 
+    pessoas['nome'] = input('Informe seu nome: ').capitalize()
+    
+    while True:
+        pessoas['sexo'] = input('Informe seu sexo [M | F]: ').upper() 
+        if pessoas['sexo'] not in 'MF': 
+            print('ERRO! Por favor digite apenas M ou F.')
+        else:
+            break
+
+    pessoas['idade'] = int(input('Informe sua idade: '))
+    
     lista_pessoas.append(pessoas.copy()) # Adiciono uma cópia do dicionário pessoas
     pessoas.clear() # Limpo o dicionário pessoas para adicionar novos dados
 
-    opcao = input('Deseja continuar cadastrando? [S | N] ') 
-    if opcao.lower() == 'n': break
-
+    while True:
+        opcao = input('Deseja continuar cadastrando? [S | N] ').lower()
+        if opcao not in 'sn': 
+            print('ERRO! Responda apenas S ou N.')
+        else:
+            break
+       
+    if opcao in 'n':
+        break
 
 # Letra A
 print(f'Foram cadastradas {len(lista_pessoas)} pessoas!')
@@ -28,9 +42,10 @@ print(f'A média de idade do grupo é: {media_idade}')
 
 # Letra C
 mulheres = [m for chave, m in enumerate(lista_pessoas) if lista_pessoas[chave]['sexo'] == 'F']
-mulheres = [lista_pessoas[chave]['nome'] for chave, nome in enumerate(lista_pessoas) ]
+#mulheres = [lista_pessoas[chave]['nome'] for chave, nome in enumerate(lista_pessoas) ]
 print(f'As mulheres são: {mulheres}')
 
 # Letra D 
 pessoas_acima_media = [pessoa for chave, pessoa in enumerate(lista_pessoas) if lista_pessoas[chave]['idade'] > media_idade]
-print(f'Pessoas com a idade acima da média {media_idade}: {pessoas_acima_media}')
+print(f'Pessoas com a idade acima da média {media_idade}: ', end='')
+for p in pessoas_acima_media: print(f"Nome: {p['nome']} - Sexo: {p['sexo']} - Idade: {p['idade']}", end=" \n ")
