@@ -14,7 +14,7 @@ while True:
         part.append(int(input(f'Quantos gols na partida {(partidas + 1)}? ')))
 
     # Insere na Lista Lista Jogadores e Limpar as Listas
-    jogador = {'nome_jogador': nome_jogador.capitalize(), 'gols': part.copy(), 'total': sum(part)}
+    jogador = {'nome_jogador': nome_jogador.capitalize(), 'gols': part.copy(), 'total': sum(part)} 
     lista_jogadores.append(jogador.copy())
     jogador.clear()
     part.clear()
