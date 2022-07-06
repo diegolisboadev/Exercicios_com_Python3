@@ -1,29 +1,21 @@
 
 # Exercicio 99
-# TODO
 
-from pprint import pprint
-from random import randint, random, randrange
+from random import randint
 
-def sorteios(lista):
-    lista = [randint(0, i) for i in range(6)]
+def sorteia():
+    lista = [randint(0, 10) for i in range(1, 6)]
     return lista
 
 def somaPar(numeros):
-    soma = []
     num = 0
-    for v in numeros:
-        if v % 2 == 0:
-            num += v
-            soma.append(num)
+    listPar = [ v for v in numeros if v % 2 == 0 ]
+    for lp in listPar:
+        num += lp
+    return num
 
-    return soma, num
+numeros = sorteia()
+print(f'Sorteando {len(numeros)} valores da lista: {numeros}')
 
-numeros = []
-numeros = sorteios(numeros)
-print(numeros)
-
-soma, num = somaPar(numeros)
-
-pprint(num)
-pprint(soma)
+soma = somaPar(numeros)
+print(f'Somando os valores pares de {numeros}, temos {soma}')

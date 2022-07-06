@@ -2,6 +2,9 @@
 # Exercicio 95 py
 
 def escreva(texto):
-    print(f'--------------\n {texto} \n--------------')
+    print('~'*len(texto))
+    print(f'{texto}', end='\n')
+    print('~'*len(texto))
 
-escreva('Olá Mundo!')
+frase = input('Informe a frase: ')
+escreva(frase)
